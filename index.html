@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Yaya ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .hidden {
+      display: none;
+    }
+    .start-screen {
+      text-align: center;
+    }
+    .start-btn {
+      padding: 20px 40px;
+      font-size: 1.3rem;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+      background-size: 400% 400%;
+      animation: gradientShift 3s ease infinite;
+      border: 3px solid white;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      color: white;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .start-btn::before {
+      content: '✨';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      font-size: 1rem;
+      animation: sparkle 2s infinite;
+    }
+
+    .start-btn::after {
+      content: '✨';
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      font-size: 1rem;
+      animation: sparkle 2s infinite 1s;
+    }
+
+    .start-btn:hover {
+      transform: scale(1.1) rotate(2deg);
+      background: linear-gradient(45deg, #ff3838, #ff9500, #00d2ff, #ff006e);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+    .birthday-screen {
+      text-align: center;
+      padding: 10px;
+      position: relative;
+    }
+
+    .birthday-screen::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      animation: pulse 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+      animation: rainbowText 3s ease-in-out infinite, bounceTitle 2s ease-in-out infinite;
+      margin-bottom: 15px;
+      position: relative;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+      padding: 0 60px;
+    }
+
+    h1::before {
+      content: '✨';
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      animation: sparkleLeft 2s ease-in-out infinite;
+      background: linear-gradient(45deg, #feca57, #ff9ff3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h1::after {
+      content: '✨';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      animation: sparkleRight 2s ease-in-out infinite 1s;
+      background: linear-gradient(45deg, #48dbfb, #feca57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes rainbowText {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    @keyframes bounceTitle {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.05); }
+    }
+
+    @keyframes sparkleLeft {
+      0%, 100% { 
+        transform: translateY(-50%) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      25% { transform: translateY(-70px) rotate(90deg) scale(1.3); }
+      50% { 
+        transform: translateY(-50%) rotate(180deg) scale(0.8);
+        opacity: 0.7;
+      }
+      75% { transform: translateY(-30px) rotate(270deg) scale(1.2); }
+    }
+
+    @keyframes sparkleRight {
+      0%, 100% { 
+        transform: translateY(-50%) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      25% { transform: translateY(-30px) rotate(-90deg) scale(1.2); }
+      50% { 
+        transform: translateY(-50%) rotate(-180deg) scale(0.9);
+        opacity: 0.8;
+      }
+      75% { transform: translateY(-70px) rotate(-270deg) scale(1.3); }
+    }
+
+    .title-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .title-container::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      background: linear-gradient(45deg, transparent, #ff6b6b, transparent, #feca57, transparent, #48dbfb, transparent);
+      border-radius: 25px;
+      opacity: 0.6;
+      animation: rotateGlow 4s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotateGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+      50% { transform: scale(1.2) rotate(0deg); opacity: 0.8; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    .slideshow {
+      position: relative;
+      width: 80%;
+      max-width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 10px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      object-fit: cover; 
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .wish {
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      color: #2c3e50;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 2px solid rgba(255,255,255,0.8);
+    }
+    .balloon {
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background: pink;
+      border-radius: 50%;
+      animation: float 5s infinite ease-in;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-10vh); }
+    }
+
+    .floating-emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatEmoji 8s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    @keyframes floatEmoji {
+      0% { 
+        transform: translateY(100vh) rotate(0deg); 
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { 
+        transform: translateY(-10vh) rotate(360deg); 
+        opacity: 0;
+      }
+    }
+
+    .heart-rain {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #ff69b4;
+      animation: heartFall 6s infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes heartFall {
+      0% { 
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% { 
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .sound-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: rgba(255,255,255,0.95);
+      border: 2px solid #667eea;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    .sound-toggle:hover {
+      background: #667eea;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* เพิ่ม CSS สำหรับหน้าวิดีโอ */
+    .video-screen {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .next-btn {
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      background: linear-gradient(45deg, #ff6b6b, #feca57);
+      border: 2px solid white;
+      border-radius: 25px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .next-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ff3838, #ff9500);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .video-container {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dancing-emoji {
+      position: absolute;
+      font-size: 3rem;
+      animation: dance 1s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    @keyframes dance {
+      0%, 100% { transform: rotate(-10deg) scale(1); }
+      50% { transform: rotate(10deg) scale(1.2); }
+    }
+
+    .crazy-text {
+      font-size: 1.5rem;
+      color: #feca57;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      animation: crazyMove 2s infinite ease-in-out;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+
+    @keyframes crazyMove {
+      0% { transform: translateX(0) rotate(0deg); }
+      25% { transform: translateX(10px) rotate(2deg); }
+      50% { transform: translateX(-10px) rotate(-2deg); }
+      75% { transform: translateX(5px) rotate(1deg); }
+      100% { transform: translateX(0) rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- หน้าก่อนเริ่ม -->
+  <div id="startScreen" class="start-screen">
+    
+    <button class="start-btn" onclick="startSurprise()">อย่ากดน้าา 🙈💕</button>
+  </div>
+
+  <!-- หน้าหลังเริ่ม -->
+  <div id="birthdayScreen" class="birthday-screen hidden">
+    <h1>🎉 Happy Birthday Yayaaa 🎂</h1>
+    <div class="slideshow">
+      <img src="yaya1.jpg" class="slide active">
+      <img src="yaya2.jpg" class="slide">
+      <img src="yaya3.jpg" class="slide">
+      <img src="yaya4.jpg" class="slide">
+    </div>
+    <div class="wish">
+      สุขสันต์วันเกิดนะค้าบ ขอให้ปีนี้เต็มไปด้วยความสุข รอยยิ้ม และสิ่งดีๆ ทุกวันนะ ขอให้โปรเจคผ่านไปด้วยดี อยู่กับเค้าไปนานๆน้าา
+    </div>
+    
+    <button class="next-btn" onclick="showVideoPage()">🎬 ดูคลิปสุดพิเศษ! 🎭</button>
+    
+    <!-- ปุ่มควบคุมเสียง -->
+    <button id="soundToggle" class="sound-toggle" onclick="toggleSound()">🔇</button>
+  </div>
+
+  <!-- หน้าวิดีโอใหม่ -->
+  <div id="videoScreen" class="video-screen hidden">
+    <div class="crazy-text">🎪 Video Time! 🎪</div>
+
+    
+    <div class="video-container">
+      <video id="birthdayVideo" controls autoplay>
+        <source src="clip.mov" type="video/mp4">
+        <source src="yaya_video.webm" type="video/webm">
+        ขออภัย เบราว์เซอร์ไม่รองรับวิดีโอ
+      </video>
+    </div>
+    
+    <div style="background: rgba(255,255,255,0.9); border-radius: 15px; padding: 15px; margin: 20px auto; max-width: 400px; color: #5a2d4d;">
+      🎭 คลิปพิเศษจาก Yaya! 🎬
+    </div>
+    
+    <button class="next-btn" onclick="goBackToMain()">🔙 กลับไปดูรูปอีกรอบ</button>
+    
+    <!-- ปุ่มควบคุมเสียงสำหรับหน้าวิดีโอ -->
+    <button id="soundToggleVideo" class="sound-toggle" onclick="toggleSound()">🔇</button>
+  </div>
+
+  <!-- เพลง -->
+  <audio id="bgMusic" loop>
+    <source src="happysong.mp3" type="audio/mpeg">
+    <source src="music/happy.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    let isMusicPlaying = false;
+
+    function startSurprise(){
+      document.getElementById('startScreen').classList.add('hidden');
+      document.getElementById('birthdayScreen').classList.remove('hidden');
+      
+      // เล่นเพลง
+      const music = document.getElementById('bgMusic');
+      music.volume = 0.5; // ปรับระดับเสียง
+      
+      // ลองเล่นเพลง
+      music.play().then(() => {
+        isMusicPlaying = true;
+        updateSoundButton();
+      }).catch(e => {
+        console.log("Cannot play audio:", e);
+        // ถ้าเล่นไม่ได้ ให้สถานะยังคงเป็นปิดเสียง
+        isMusicPlaying = false;
+        updateSoundButton();
+      });
+      
+      // ลูกโป่ง
+      setInterval(createBalloon, 500);
+      
+      // อิโมจิลอย
+      setInterval(createFloatingEmoji, 1000);
+      
+      // ฝนหัวใจ
+      setInterval(createHeartRain, 300);
+      
+      // สไลด์โชว์
+      let index = 0;
+      const slides = document.querySelectorAll(".slide");
+      setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+      }, 2500);
+    }
+
+    // ฟังก์ชันไปหน้าวิดีโอ
+    function showVideoPage(){
+      document.getElementById('birthdayScreen').classList.add('hidden');
+      document.getElementById('videoScreen').classList.remove('hidden');
+      
+      // อัปเดตปุ่มเสียงสำหรับหน้าวิดีโอ
+      updateSoundButton();
+      
+      // เริ่มเอฟเฟกต์กวนๆ
+      startCrazyEffects();
+    }
+
+    // ฟังก์ชันกลับหน้าหลัก
+    function goBackToMain(){
+      document.getElementById('videoScreen').classList.add('hidden');
+      document.getElementById('birthdayScreen').classList.remove('hidden');
+      
+      // หยุดวิดีโอ
+      const video = document.getElementById('birthdayVideo');
+      video.pause();
+      
+      // อัปเดตปุ่มเสียงสำหรับหน้าหลัก
+      updateSoundButton();
+    }
+
+    // เอฟเฟกต์กวนๆ สำหรับหน้าวิดีโอ
+    function startCrazyEffects(){
+      // อิโมจิเต้น
+      setInterval(createDancingEmoji, 1500);
+      
+      // ลูกโป่งมากขึ้น
+      setInterval(createBalloon, 300);
+      
+      // ฝนหัวใจเร็วขึ้น
+      setInterval(createHeartRain, 200);
+    }
+
+    function createDancingEmoji(){
+      const emojis = ['🕺', '💃', '🤡', '🎪', '🎭', '🎨', '🎯', '🎲', '🎸', '🎺'];
+      const emoji = document.createElement("div");
+      emoji.className = "dancing-emoji";
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * window.innerWidth + "px";
+      emoji.style.top = Math.random() * window.innerHeight + "px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 3000);
+    }
+
+    function toggleSound(){
+      const music = document.getElementById('bgMusic');
+      if(isMusicPlaying){
+        music.pause();
+        isMusicPlaying = false;
+        updateSoundButton();
+      } else {
+        music.play().then(() => {
+          isMusicPlaying = true;
+          updateSoundButton();
+        }).catch(e => {
+          console.log("Cannot play audio:", e);
+          isMusicPlaying = false;
+          updateSoundButton();
+        });
+      }
+    }
+
+    function updateSoundButton(){
+      // อัปเดตปุ่มหน้าหลัก
+      const buttonMain = document.getElementById('soundToggle');
+      if(buttonMain){
+        buttonMain.textContent = isMusicPlaying ? '🔊' : '🔇';
+      }
+      
+      // อัปเดตปุ่มหน้าวิดีโอ
+      const buttonVideo = document.getElementById('soundToggleVideo');
+      if(buttonVideo){
+        buttonVideo.textContent = isMusicPlaying ? '🔊' : '🔇';
+      }
+    }
+
+    function showMusicButton(){
+      const btn = document.createElement("button");
+      btn.innerHTML = "🎵 เปิดเพลง";
+      btn.className = "sound-toggle";
+      btn.onclick = () => {
+        document.getElementById('bgMusic').play().then(() => {
+          isMusicPlaying = true;
+          btn.remove();
+          updateSoundButton();
+        });
+      };
+      document.body.appendChild(btn);
+    }
+
+    function createFloatingEmoji(){
+      const emojis = ['🎉', '🎂', '🎈', '🎁', '🌟', '✨', '💖', '🥳', '🎊', '🌈', '🦄', '🍰'];
+      const emoji = document.createElement("div");
+      emoji.className = "floating-emoji";
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * window.innerWidth + "px";
+      emoji.style.animationDelay = Math.random() * 2 + "s";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 8000);
+    }
+
+    function createHeartRain(){
+      const hearts = ['💕', '💖', '💗', '💝', '💘'];
+      const heart = document.createElement("div");
+      heart.className = "heart-rain";
+      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    function createBalloon(){
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.background = `hsl(${Math.random()*360}, 70%, 80%)`;
+      document.body.appendChild(balloon);
+      setTimeout(()=>balloon.remove(),5000);
+    }
+  </script>
+
+</body>
+</html>
+
